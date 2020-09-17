@@ -9,8 +9,8 @@ import java.util.Map;
 @RestController
 public class TaskRestController {
 
-    @Autowired
-    private TaskService taskService;
+    private @Autowired
+    TaskService taskService;
 
     @GetMapping("/get")
     public ArrayList<String> tasks() {

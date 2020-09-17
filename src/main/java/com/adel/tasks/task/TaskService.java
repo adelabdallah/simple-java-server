@@ -10,8 +10,8 @@ import java.util.ArrayList;
 @Component
 public class TaskService {
 
-    @Autowired
-    private TaskDao taskDao;
+    private @Autowired
+    TaskDao taskDao;
 
     private static final Logger logger = LoggerFactory.getLogger(TaskService.class);
 
