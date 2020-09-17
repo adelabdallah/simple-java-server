@@ -21,6 +21,12 @@ public class TaskService {
         taskDao.createTask(task);
     }
 
+    public void updateTask(String id, String title, String date, String description, String isCompleted) {
+        logger.info("Updating task...");
+        var task = new Task(id, title, date, description, Boolean.parseBoolean(isCompleted));
+        taskDao.updateTask(task);
+    }
+
     public ArrayList<String> getTasks() {
         return taskDao.getTasks();
     }

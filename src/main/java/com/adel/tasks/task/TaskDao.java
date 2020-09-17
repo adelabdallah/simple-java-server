@@ -20,9 +20,9 @@ public class TaskDao {
     private static final Logger logger = LoggerFactory.getLogger(TaskDao.class);
 
     public void createTask(Task task) {
+        var document = createTaskDocument(task);
         try {
             var collection = mongo.getDatabase("local").getCollection("tasks");
-            var document = createTaskDocument(task);
             collection.insertOne(document);
             logger.info("Added task to database");
         } catch (Exception e) {
@@ -46,6 +46,18 @@ public class TaskDao {
             cursor.close();
         }
         return tasks;
+    }
+
+    public boolean updateTask(Task task) {
+        try {
+            deleteTask(task.getId());
+            createTask(task);
+            return true;
+        } catch (Exception e) {
+            logger.error("Unable to update task");
+            e.printStackTrace();
+            return false;
+        }
     }
 
     public boolean deleteTask(String taskId) {

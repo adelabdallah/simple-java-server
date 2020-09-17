@@ -19,12 +19,21 @@ public class TaskRestController {
 
     @PostMapping("/create")
     public void createTask(@RequestBody Map<String, Object> payload) {
-
         taskService.createTask(
                 payload.get("id").toString(),
                 payload.get("title").toString(),
                 payload.get("date").toString(),
                 payload.get("description").toString());
+    }
+
+    @PostMapping("/update")
+    public void updateTask(@RequestBody Map<String, Object> payload) {
+        taskService.updateTask(
+                payload.get("id").toString(),
+                payload.get("title").toString(),
+                payload.get("date").toString(),
+                payload.get("description").toString(),
+                payload.get("isCompleted").toString());
     }
 
     @DeleteMapping("/delete")
