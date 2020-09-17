@@ -41,10 +41,10 @@ There are four endpoints:
 
 ```json
 {
-  id: string,
-  title: string,
-  date: string,
-  description: string
+  "id": "string",
+  "title": "string",
+  "date": "string",
+  "description": "string"
 }
 ```
 
@@ -52,11 +52,11 @@ There are four endpoints:
 
 ```json
 {
-  id: string,
-  title: string,
-  date: string,
-  description: string,
-  isCompleted: boolean
+  "id": "string",
+  "title": "string",
+  "date": "string",
+  "description": "string",
+  "isCompleted": "boolean"
 }
 ```
 
