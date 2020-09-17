@@ -50,8 +50,8 @@ public class TaskDao {
 
     public boolean updateTask(Task task) {
         try {
-            deleteTask(task.getId());
-            createTask(task);
+            var deleteSuccess = deleteTask(task.getId());
+            if (deleteSuccess) createTask(task);
             return true;
         } catch (Exception e) {
             logger.error("Unable to update task");
