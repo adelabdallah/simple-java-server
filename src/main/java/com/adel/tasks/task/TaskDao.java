@@ -32,6 +32,7 @@ public class TaskDao {
     }
 
     public ArrayList<String> getTasks() {
+        logger.info("Getting tasks...");
         var tasks = new ArrayList<String>();
         var cursor = mongo.getDatabase("local").getCollection("tasks").find().iterator();
 
