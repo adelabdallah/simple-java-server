@@ -15,10 +15,10 @@ public class TaskService {
 
     private static final Logger logger = LoggerFactory.getLogger(TaskService.class);
 
-    public void createTask(String id, String title, String date, String description) {
+    public boolean createTask(String id, String title, String date, String description) {
         logger.info("Adding task to database...");
         var task = new Task(id, title, date, description, false);
-        taskDao.createTask(task);
+        return taskDao.createTask(task);
     }
 
     public void updateTask(String id, String title, String date, String description, String isCompleted) {

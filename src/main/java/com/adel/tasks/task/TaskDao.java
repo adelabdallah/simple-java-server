@@ -19,22 +19,28 @@ public class TaskDao {
 
     private static final Logger logger = LoggerFactory.getLogger(TaskDao.class);
 
-    public void createTask(Task task) {
+    public boolean createTask(Task task) {
         var document = createTaskDocument(task);
         try {
             var collection = mongo.getDatabase("local").getCollection("tasks");
             collection.insertOne(document);
             logger.info("Added task to database");
+            return true;
         } catch (Exception e) {
             logger.error("Unable to add task to DB");
             e.printStackTrace();
+            return false;
         }
     }
 
     public ArrayList<String> getTasks() {
         logger.info("Getting tasks...");
         var tasks = new ArrayList<String>();
-        var cursor = mongo.getDatabase("local").getCollection("tasks").find().iterator();
+        var cursor = mongo
+                .getDatabase("local")
+                .getCollection("tasks")
+                .find()
+                .iterator();
 
         try {
             while (cursor.hasNext()) {

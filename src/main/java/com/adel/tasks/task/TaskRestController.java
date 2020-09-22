@@ -19,8 +19,8 @@ public class TaskRestController {
     }
 
     @PostMapping("/create")
-    public void createTask(@RequestBody Map<String, Object> payload) {
-        taskService.createTask(
+    public boolean createTask(@RequestBody Map<String, Object> payload) {
+        return taskService.createTask(
                 payload.get("id").toString(),
                 payload.get("title").toString(),
                 payload.get("date").toString(),
