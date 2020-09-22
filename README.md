@@ -32,6 +32,10 @@ A basic Maven Java server using Spring Boot, and MongoDB. Created using [Spring 
 
 - Finally, start the Spring server using: `mvnw spring-boot:run`.
 
+## Tests
+
+Navigate to `TaskDaoTest.java` and run tests in editor. 
+
 ## API
 
 There are four endpoints:
