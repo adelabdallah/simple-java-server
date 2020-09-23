@@ -12,7 +12,7 @@
     <artifactId>tasks</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>tasks</name>
-    <description>Take home project for Jahia</description>
+    <description>Simple Java Server</description>
 
     <properties>
         <java.version>11</java.version>
