@@ -1,6 +1,6 @@
 # Simple Java Server
 
-A basic Maven Java server using Spring Boot, and MongoDB. Created using [Spring Initializr](https://start.spring.io/). The backend for the [Simple Todo App](https://github.com/adelabdallah/simple-todo-app).
+A basic Java server using Spring Boot, and MongoDB. Created using [Spring Initializr](https://start.spring.io/). The backend for the [Simple Todo App](https://github.com/adelabdallah/simple-todo-app).
 
 ## Running Locally
 
